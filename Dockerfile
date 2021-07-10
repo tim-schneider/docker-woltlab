@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y nginx
 # Install Dependencies
 RUN apt-get install -y \
         libpng-dev \
+        libwebp-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libjpeg-dev \
@@ -22,6 +23,7 @@ RUN apt-get install -y \
 # Install PHP Extensions
 RUN docker-php-ext-install pdo_mysql mysqli && \
     docker-php-ext-install pdo_pgsql && \
+    docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg && \
     docker-php-ext-install gd && \
     docker-php-ext-install exif && \
     pecl install imagick && \
