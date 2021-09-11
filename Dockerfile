@@ -36,7 +36,7 @@ RUN docker-php-ext-install pdo_mysql mysqli && \
     
 
 # Include Woltlab Setup
-RUN wget -O /tmp/woltlab.zip https://assets.woltlab.com/release/woltlab-suite-5.3.10.zip && \
+RUN wget -O /tmp/woltlab.zip https://assets.woltlab.com/release/woltlab-suite-5.4.7.zip && \
     unzip /tmp/woltlab.zip -d /tmp/woltlab && \
     mkdir -p /var/www/woltlab && \
     mkdir -p /opt/woltlab && \
